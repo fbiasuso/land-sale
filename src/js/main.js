@@ -13,6 +13,18 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+// ── 8. BACK TO TOP BUTTON ────────────────────────────
+(function() {
+  const btn = document.getElementById('btn-volver');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > window.innerHeight);
+  }, { passive: true });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+
 // ── 2. MOBILE HAMBURGER ────────────────────────────────
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks  = document.querySelector('.nav-links');
@@ -52,7 +64,7 @@ function initCountdown() {
   // Target: 30 días desde el primer acceso (o fecha fija)
   const STORAGE_KEY = 'terrenos_countdown_end';
   //let endTime = localStorage.getItem(STORAGE_KEY);
-  let endTime = new Date('2026-8-15').getTime(); 
+  let endTime = new Date('2026-08-15T00:00:00').getTime();
   
 console.log(endTime);
  /*  if (!endTime) {
@@ -268,7 +280,7 @@ document.querySelectorAll('.whatsapp-btn, .btn-wa-grande, .mapa-cta, .btn-nav-wa
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      duration: 750,
+      duration: 800,
       once: true,
       offset: 80,
       easing: 'ease-out-cubic',
