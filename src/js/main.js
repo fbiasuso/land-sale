@@ -28,21 +28,64 @@ window.addEventListener('scroll', () => {
 // ── 2. MOBILE HAMBURGER ────────────────────────────────
 const hamburger = document.querySelector('.nav-hamburger');
 const navLinks  = document.querySelector('.nav-links');
+const closeBtn  = document.querySelector('.nav-close-btn');
 
+// ── 2a. Open / Close functions ──────────────────────────
+function openMenu() {
+  if (!hamburger || !navLinks || navLinks.classList.contains('open')) return;
+  hamburger.classList.add('open');
+  navLinks.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  hamburger.setAttribute('aria-label', 'Cerrar menú');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  if (!hamburger || !navLinks || !navLinks.classList.contains('open')) return;
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Abrir menú');
+  document.body.style.overflow = '';
+}
+
+// ── 2b. Hamburger toggle ───────────────────────────────
 if (hamburger && navLinks) {
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
-    document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    if (navLinks.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
+}
 
-  // Close on link click
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navLinks.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+// ── 2c. Close triggers ─────────────────────────────────
+// Close button
+if (closeBtn) {
+  closeBtn.addEventListener('click', closeMenu);
+}
+
+// Overlay background click (target is navLinks itself, not a child)
+if (navLinks) {
+  navLinks.addEventListener('click', function (e) {
+    if (e.target === this) {
+      closeMenu();
+    }
+  });
+}
+
+// Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
+    closeMenu();
+  }
+});
+
+// Close on link click inside menu
+if (navLinks) {
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
   });
 }
 
