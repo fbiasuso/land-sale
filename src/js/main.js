@@ -208,11 +208,11 @@ function initMap() {
     zoom: 15,
     zoomControl: true,
     scrollWheelZoom: false,
+    attributionControl: false,
   });
 
   // Tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 19,
   }).addTo(map);
 
