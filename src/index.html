@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venta de Terrenos cerca del Badén — Tucumán | 30% OFF</title>
+  <meta name="description" content="3 terrenos de 10×30 mts cerca del Puente del Badén, Tucumán. Precio $7.000.000 con 30% de descuento. Financiación disponible. ¡Últimas unidades!" />
+  <meta property="og:title" content="Venta de Terrenos cerca del Badén — 30% OFF" />
+  <meta property="og:description" content="Invertí en tu futuro. 3 lotes de 300m² con agua, luz y financiación. Tucumán, Argentina." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800&family=Oswald:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
+  <header id="navbar">
+    <div class="container nav-inner">
+
+      <a href="#hero" class="nav-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C9 2 6 5 6 8.5c0 2 1 3.8 2.5 5L12 22l3.5-8.5C17 12.3 18 10.5 18 8.5 18 5 15 2 12 2z" fill="#f5c518"/>
+          <circle cx="12" cy="8.5" r="2.5" fill="#0f2410"/>
+        </svg>
+        Terrenos <span>Badén</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#oferta">Oferta</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#terrenos">Terrenos</a>
+        <a href="#mapa">Ubicación</a>
+        <a href="#cta-final" class="btn-nav-wa whatsapp-btn" aria-label="Contactar por WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.57l5.89-1.542A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.018-1.378l-.36-.214-3.727.977.994-3.634-.235-.374A9.818 9.818 0 0112 2.182c5.427 0 9.818 4.391 9.818 9.818 0 5.426-4.391 9.818-9.818 9.818z"/></svg>
+          WhatsApp
+        </a>
+      </nav>
+
+      <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg" role="img" aria-label="Paisaje natural del Badén, Tucumán"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Oportunidad de inversión · Tucumán</span>
+      <h1 class="hero-title">Venta de<br>Terrenos</h1>
+      <p class="hero-subtitle">cerca del Badén</p>
+      <p class="hero-desc">
+        Tres hermosos lotes de 300m² a pasos del Puente del Badén, sobre Ruta 308.
+        Naturaleza, tranquilidad y conectividad. Financiación disponible.
+      </p>
+      <div class="hero-btns">
+        <a href="#oferta" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Ver Oferta
+        </a>
+        <a href="#cta-final" class="btn-outline whatsapp-btn">
+          Consultá ahora
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Deslizá</span>
+      <div class="hero-scroll-arrow"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       BANDA DE OFERTA
+  ═══════════════════════════════════════════════ -->
+  <section id="oferta" aria-label="Oferta de precio con descuento">
+    <div class="container">
+
+      <div class="oferta-badge">
+        <strong>30%</strong> DE DESCUENTO
+      </div>
+
+      <div class="oferta-inner">
+
+        <!-- Precios -->
+        <div class="oferta-precios" data-aos="fade-right">
+          <p class="precio-label">Precio original</p>
+          <p class="precio-original" aria-label="Precio original diez millones de pesos">$ 10.000.000</p>
+          <p class="precio-label" style="margin-top:12px;color:rgba(253,232,122,0.7)">Precio con descuento</p>
+          <p class="precio-descuento">
+            $&nbsp;<span data-counter="7000000" data-prefix="" data-suffix="" data-duration="1800">7.000.000</span>
+          </p>
+          <p class="precio-descripcion">
+            ¡Por tiempo limitado! · Últimos 3 terrenos disponibles
+          </p>
+        </div>
+
+        <!-- Divisor -->
+        <div class="oferta-divisor" aria-hidden="true"></div>
+
+        <!-- Countdown -->
+        <div class="oferta-countdown" data-aos="fade-left">
+          <p class="countdown-label">La oferta vence en</p>
+          <div class="countdown-grid" role="timer" aria-label="Tiempo restante de la oferta">
+            <div class="countdown-item">
+              <span class="countdown-num" id="cd-dias">00</span>
+              <span class="countdown-unit">días</span>
+            </div>
+            <span class="countdown-sep" aria-hidden="true">:</span>
+            <div class="countdown-item">
+              <span class="countdown-num" id="cd-horas">00</span>
+              <span class="countdown-unit">horas</span>
+            </div>
+            <span class="countdown-sep" aria-hidden="true">:</span>
+            <div class="countdown-item">
+              <span class="countdown-num" id="cd-minutos">00</span>
+              <span class="countdown-unit">min</span>
+            </div>
+            <span class="countdown-sep" aria-hidden="true">:</span>
+            <div class="countdown-item">
+              <span class="countdown-num" id="cd-segundos">00</span>
+              <span class="countdown-unit">seg</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /oferta-inner -->
+
+      <p class="oferta-nota">
+        ⚡ Oferta válida por tiempo limitado · <strong>¡Solo quedan 3 terrenos!</strong> · Consultá hoy mismo
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       BENEFICIOS
+  ═══════════════════════════════════════════════ -->
+  <section id="beneficios">
+    <div class="container">
+
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">¿Por qué elegirnos?</span>
+        <h2 class="section-title">Todo lo que necesitás<br>para tu <em>inversión</em></h2>
+        <p class="section-desc">Comprá con tranquilidad y respaldo en cada paso del proceso.</p>
+      </div>
+
+      <div class="beneficios-grid">
+
+        <!-- Tarjeta 1 -->
+        <article class="beneficio-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="beneficio-icono">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 4C9.37 4 4 9.37 4 16s5.37 12 12 12 12-5.37 12-12S22.63 4 16 4z" fill="rgba(45,106,45,0.15)"/>
+              <path d="M11 16l3.5 3.5L21 12" stroke="#2d6a2d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 10.5C9.5 8.5 12 7 16 7s6.5 1.5 8 3.5" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M24 21.5c-1.5 2-4 3.5-8 3.5s-6.5-1.5-8-3.5" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-titulo">Opciones de Financiación</h3>
+          <p class="beneficio-desc">Planes flexibles que se adaptan a tu bolsillo. Coordinamos las cuotas según tus posibilidades para que tu sueño sea posible hoy.</p>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="beneficio-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="beneficio-icono">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M16 4C9.37 4 4 9.37 4 16s5.37 12 12 12 12-5.37 12-12S22.63 4 16 4z" fill="rgba(245,197,24,0.12)"/>
+              <!-- Bolt -->
+              <path d="M18 5l-7 12h6l-1 10 9-13h-6l1-9z" fill="#f5c518" stroke="none"/>
+              <!-- Drops -->
+              <path d="M8 20c0 2 1.5 3.5 3.5 3.5S15 22 15 20c0-2-3.5-5.5-3.5-5.5S8 18 8 20z" fill="#2d6a2d" opacity="0.7"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-titulo">Agua y Luz Disponibles</h3>
+          <p class="beneficio-desc">Factibilidad de conexión a los servicios principales. Contá con agua y luz para tu proyecto desde el primer día.</p>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="beneficio-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="beneficio-icono">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="4" width="20" height="24" rx="3" fill="rgba(45,106,45,0.15)" stroke="#2d6a2d" stroke-width="1.5"/>
+              <path d="M10 11h12M10 15h12M10 19h8" stroke="#2d6a2d" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="23" cy="22" r="5" fill="#f5c518"/>
+              <path d="M21 22l1.5 1.5L25 20" stroke="#0f2410" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="beneficio-titulo">Escritura en Regla</h3>
+          <p class="beneficio-desc">Documentación completa y transparente. Comprá con seguridad jurídica. Te acompañamos durante todo el proceso notarial.</p>
+        </article>
+
+      </div><!-- /beneficios-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CARACTERÍSTICAS DEL TERRENO
+  ═══════════════════════════════════════════════ -->
+  <section id="terrenos">
+    <div class="container">
+
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Los terrenos</span>
+        <h2 class="section-title" style="color:var(--blanco)">Tres lotes únicos<br>listos para <em style="color:var(--amarillo)">vos</em></h2>
+        <p class="section-desc">Cada terreno es una oportunidad. Dimensiones ideales para construir tu hogar o invertir.</p>
+      </div>
+
+      <div class="terrenos-layout">
+
+        <!-- Stats -->
+        <div class="terrenos-stats" data-aos="fade-right">
+
+          <div class="stat-item">
+            <span class="stat-icono">📐</span>
+            <span class="stat-valor">10 × 30</span>
+            <span class="stat-label">Metros por lote</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-icono">🏘️</span>
+            <span class="stat-valor">3</span>
+            <span class="stat-label">Lotes disponibles</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-icono">📏</span>
+            <span class="stat-valor">300 m²</span>
+            <span class="stat-label">Superficie total c/u</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-icono">🛣️</span>
+            <span class="stat-valor">Ruta 308</span>
+            <span class="stat-label">Acceso principal</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-icono">💡</span>
+            <span class="stat-valor">Factible</span>
+            <span class="stat-label">Agua y electricidad</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-icono">💰</span>
+            <span class="stat-valor" style="font-size:1rem">$7.000.000</span>
+            <span class="stat-label">Precio con 30% OFF</span>
+          </div>
+
+        </div>
+
+        <!-- Diagram visual -->
+        <div class="terrenos-visual" data-aos="fade-left">
+          <div class="lote-diagram">
+            <p style="color:rgba(255,255,255,0.45);font-size:0.78rem;margin-bottom:16px;letter-spacing:0.1em;text-transform:uppercase;">Distribución de lotes</p>
+            <div class="lote-boxes">
+              <div class="lote-box" title="Lote 1">
+                <span class="lote-num">1</span>
+                <span class="lote-dim">10m<br>×<br>30m</span>
+                <div class="lote-dot"></div>
+              </div>
+              <div class="lote-box" title="Lote 2">
+                <span class="lote-num">2</span>
+                <span class="lote-dim">10m<br>×<br>30m</span>
+                <div class="lote-dot" style="animation-delay:0.5s"></div>
+              </div>
+              <div class="lote-box" title="Lote 3">
+                <span class="lote-num">3</span>
+                <span class="lote-dim">10m<br>×<br>30m</span>
+                <div class="lote-dot" style="animation-delay:1s"></div>
+              </div>
+            </div>
+            <p class="lote-diagram-info">
+              <strong>Camino vecinal →</strong> Acceso a los lotes<br>
+              <span>Próximos al Puente del Badén · Ruta 308</span>
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /terrenos-layout -->
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       MAPA INTERACTIVO
+  ═══════════════════════════════════════════════ -->
+  <section id="mapa">
+    <div class="container">
+
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Ubicación</span>
+        <h2 class="section-title">Encontranos en<br><em>el mapa</em></h2>
+        <p class="section-desc">Cerca del Puente del Badén, sobre Ruta 308. Acceso por Camino Vecinal.</p>
+      </div>
+
+      <div class="mapa-wrapper">
+
+        <div id="mapa-container" aria-label="Mapa interactivo mostrando la ubicación de los terrenos" role="application"></div>
+
+        <div class="mapa-info" data-aos="fade-left">
+          <h3>📍 Cómo llegar</h3>
+
+          <div class="mapa-item">
+            <span class="mapa-item-icono">🛣️</span>
+            <div class="mapa-item-texto">
+              <strong>Acceso principal</strong>
+              <span>Ruta Provincial 308</span>
+            </div>
+          </div>
+
+          <div class="mapa-item">
+            <span class="mapa-item-icono">🌿</span>
+            <div class="mapa-item-texto">
+              <strong>Referencia</strong>
+              <span>Puente del Badén · El Badén kiosco y despensa</span>
+            </div>
+          </div>
+
+          <div class="mapa-item">
+            <span class="mapa-item-icono">🏡</span>
+            <div class="mapa-item-texto">
+              <strong>Ingreso al predio</strong>
+              <span>Por Camino Vecinal, señalizado</span>
+            </div>
+          </div>
+
+          <div class="mapa-item">
+            <span class="mapa-item-icono">📍</span>
+            <div class="mapa-item-texto">
+              <strong>Zona</strong>
+              <span>Tucumán, Argentina</span>
+            </div>
+          </div>
+
+          <a href="#" class="mapa-cta whatsapp-btn" aria-label="Coordinar visita por WhatsApp">
+            🗓️ Coordinar visita por WhatsApp
+          </a>
+        </div>
+
+      </div><!-- /mapa-wrapper -->
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       GALERÍA
+  ═══════════════════════════════════════════════ -->
+  <section id="galeria">
+    <div class="container">
+
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">El lugar</span>
+        <h2 class="section-title" style="color:var(--blanco)">Naturaleza que<br><em style="color:var(--amarillo)">inspira</em></h2>
+        <p class="section-desc">Un entorno único, rodeado de verde y tranquilidad tucumana.</p>
+      </div>
+
+      <div class="galeria-grid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="galeria-item">
+          <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80"
+            alt="Paisaje verde natural con árboles" loading="lazy" />
+          <div class="galeria-overlay"><span>Vista del entorno natural</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80"
+            alt="Colinas y vegetación tucumana" loading="lazy" />
+          <div class="galeria-overlay"><span>Vegetación serrana</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?w=600&q=80"
+            alt="Río y naturaleza frondosa" loading="lazy" />
+          <div class="galeria-overlay"><span>Curso de agua natural</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600&q=80"
+            alt="Amanecer en zona rural" loading="lazy" />
+          <div class="galeria-overlay"><span>Amanecer tranquilo</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80"
+            alt="Montañas verdes del noroeste argentino" loading="lazy" />
+          <div class="galeria-overlay"><span>Horizonte de montañas</span></div>
+        </div>
+
+      </div><!-- /galeria-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       TESTIMONIOS
+  ═══════════════════════════════════════════════ -->
+  <section id="testimonios">
+    <div class="container">
+
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-eyebrow">Lo que dicen</span>
+        <h2 class="section-title">Inversores que ya<br>eligieron <em>el Badén</em></h2>
+      </div>
+
+      <div class="testimonios-grid">
+
+        <article class="testimonio-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="estrellas" aria-label="5 estrellas">
+            <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
+          </div>
+          <p class="testimonio-quote">"</p>
+          <p class="testimonio-texto">Compré el lote 1 y fue la mejor decisión del año. El proceso fue rápido, transparente y la financiación me ayudó muchísimo. El lugar es hermoso.</p>
+          <div class="testimonio-autor">
+            <div class="testimonio-avatar" aria-hidden="true">MA</div>
+            <div>
+              <p class="testimonio-nombre">Marcos A.</p>
+              <p class="testimonio-lugar">San Miguel de Tucumán</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonio-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="estrellas" aria-label="5 estrellas">
+            <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
+          </div>
+          <p class="testimonio-quote">"</p>
+          <p class="testimonio-texto">Soñaba con tener un lugar en la naturaleza para construir y relajarme los fines de semana. El Badén es exactamente eso. Recomiendo 100%.</p>
+          <div class="testimonio-autor">
+            <div class="testimonio-avatar" aria-hidden="true">VR</div>
+            <div>
+              <p class="testimonio-nombre">Valeria R.</p>
+              <p class="testimonio-lugar">Banda del Río Salí</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonio-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="estrellas" aria-label="5 estrellas">
+            <span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span><span class="estrella">★</span>
+          </div>
+          <p class="testimonio-quote">"</p>
+          <p class="testimonio-texto">Lo que más me gustó fue la seriedad del trato. Pregunté por WhatsApp y en minutos me respondieron todo. El terreno tiene buena conectividad y vista increíble.</p>
+          <div class="testimonio-autor">
+            <div class="testimonio-avatar" aria-hidden="true">JL</div>
+            <div>
+              <p class="testimonio-nombre">Jorge L.</p>
+              <p class="testimonio-lugar">Yerba Buena, Tucumán</p>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /testimonios-grid -->
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CTA FINAL
+  ═══════════════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="container">
+      <div class="cta-content" data-aos="fade-up">
+
+        <div class="cta-badge">¡Últimas 3 unidades disponibles!</div>
+
+        <h2 class="cta-title">
+          ¿Listo para invertir<br>en tu <span>futuro</span>?
+        </h2>
+
+        <p class="cta-desc">
+          Naturaleza, tranquilidad y crecimiento. Financiación flexible.<br>
+          Escribinos hoy y asegurá tu lote antes de que se agoten.
+        </p>
+
+        <div class="cta-btns">
+          <a href="#" class="btn-wa-grande whatsapp-btn" aria-label="Consultar por WhatsApp">
+            <div class="btn-wa-pulse" aria-hidden="true"></div>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.852L.057 23.57l5.89-1.542A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.018-1.378l-.36-.214-3.727.977.994-3.634-.235-.374A9.818 9.818 0 0112 2.182c5.427 0 9.818 4.391 9.818 9.818 0 5.426-4.391 9.818-9.818 9.818z"/></svg>
+            Consultar por WhatsApp
+          </a>
+
+          <a href="tel:+543865430532" class="btn-tel">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.4a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            3865-430532
+          </a>
+        </div>
+
+        <p class="cta-garantia">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Operación segura · Documentación en regla · Sin costos ocultos
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer id="contacto">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div>
+          <p class="footer-logo">🌳 Terrenos <span>Badén</span></p>
+          <p class="footer-tagline">Naturaleza, tranquilidad y crecimiento.</p>
+          <div class="footer-contact">
+            <a href="tel:+543865430532">📞 3865-430532</a>
+            <a href="https://wa.me/543865430532" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a href="https://terrenos-cerca-del-baden.netlify.app" target="_blank" rel="noopener">🌐 terrenos-cerca-del-baden.netlify.app</a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <nav aria-label="Links del footer">
+          <p class="footer-col-title">Navegación</p>
+          <ul class="footer-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#oferta">Oferta</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#terrenos">Terrenos</a></li>
+            <li><a href="#mapa">Ubicación</a></li>
+          </ul>
+        </nav>
+
+        <!-- Info -->
+        <div>
+          <p class="footer-col-title">Los terrenos</p>
+          <ul class="footer-links">
+            <li><a href="#terrenos">10 × 30 metros c/u</a></li>
+            <li><a href="#terrenos">3 lotes disponibles</a></li>
+            <li><a href="#beneficios">Financiación disponible</a></li>
+            <li><a href="#mapa">Ruta 308, Tucumán</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-bottom">
+        <p>© 2025 Terrenos cerca del Badén. Todos los derechos reservados.</p>
+        <p>Desarrollado con ❤️ · <a href="https://terrenos-cerca-del-baden.netlify.app" target="_blank" rel="noopener">terrenos-cerca-del-baden.netlify.app</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
