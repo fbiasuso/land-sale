@@ -64,10 +64,11 @@ https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Da
 4. BENEFICIOS            — 3 tarjetas: Financiación / Agua y Luz / Escritura
 5. CARACTERÍSTICAS       — Detalles de los terrenos: 3 lotes 10×30 mts
 6. MAPA INTERACTIVO      — Leaflet.js con marcador en la ubicación real
-7. GALERÍA               — Fotos del lugar (placeholder con imágenes de naturaleza)
-8. TESTIMONIOS           — 2-3 testimonios ficticios / placeholder
+7. GALERÍA               — [COMENTADA] Placeholder para implementación futura
+8. TESTIMONIOS           — [COMENTADA] Placeholder para implementación futura
 9. CTA FINAL             — Banner de urgencia con WhatsApp + contador de lotes
 10. FOOTER               — Contacto, teléfono, web
+—. BOTÓN VOLVER ARRIBA   — ⬆︎ flotante, esquina inferior derecha
 ```
 
 ---
@@ -81,8 +82,8 @@ https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Da
 - Botón CTA "Ver Oferta" con scroll suave hacia precio
 
 ### Banda de Precio (Sección 2)
-- Fondo verde oscuro con borde amarillo
-- Clip-path diagonal en bordes superior e inferior: `polygon(0 5%, 100% 0, 100% 95%, 0 100%)`
+- Fondo verde oscuro con clip-path diagonal: `polygon(0 5%, 100% 0, 100% 95%, 0 100%)`
+- El clip-path se aplica sobre el pseudo-elemento `::before`, no sobre el contenedor
 - Precio original tachado con animación de "rayado"
 - Precio final grande en amarillo con sombra de texto
 - Countdown timer al lado derecho
@@ -93,14 +94,18 @@ https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Da
 - Íconos SVG custom (no Font Awesome — dibujados inline)
 
 ### Mapa (Sección 6)
-- Leaflet.js centrado en: lat -26.8950, lng -65.2340 (aproximación Tucumán)
+- Leaflet.js centrado en: lat -27.630421, lng -65.693640 (ubicación real Badén)
 - Marcador custom con ícono de árbol/pin verde
 - Popup con info del lote
 
 ### CTA Final
 - Fondo con textura de grano (CSS noise filter o SVG feTurbulence)
+- Badge: "¡Últimas 3 unidades disponibles!"
+- H2: "¿Listo para invertir en tu futuro?"
+- Subtext: "Naturaleza, tranquilidad y crecimiento. Financiación flexible. Escribinos hoy y asegurá tu lote antes de que se agoten."
 - Botón WhatsApp verde brillante con pulso animado
-- Contador de lotes restantes: "¡ÚLTIMOS 3 DISPONIBLES!"
+- Número de teléfono clickable: 3865-430532
+- Garantía: "Operación segura · Documentación en regla · Sin costos ocultos"
 
 ---
 

@@ -66,9 +66,12 @@ land-sale/
 <section id="beneficios">     <!-- 3 tarjetas -->
 <section id="terrenos">       <!-- Características lotes -->
 <section id="mapa">           <!-- Mapa Leaflet -->
-<section id="galeria">        <!-- Imágenes del lugar -->
+<!--section id="galeria"-->   <!-- [COMENTADA] Placeholder para futuro -->
+<!--section id="testimonios"--> <!-- [COMENTADA] Placeholder para futuro -->
 <section id="cta-final">      <!-- CTA urgencia + WhatsApp -->
 <footer id="contacto">        <!-- Footer -->
+
+<!-- Botón flotante volver arriba (esquina inferior derecha) -->
 ```
 
 ---
@@ -76,11 +79,12 @@ land-sale/
 ## Especificaciones por Sección
 
 ### 1. NAVBAR (sticky)
-- Logo texto: "🌳 Terrenos Badén"
-- Links: Inicio | Oferta | Beneficios | Ubicación | Contacto
+- Logo texto: "🌳 Terrenos Badén" (hace scroll al inicio al clickear)
+- Links: Oferta | Beneficios | Terrenos | Ubicación
 - CTA derecha: botón WhatsApp verde
 - Comportamiento: fondo transparente → verde oscuro al hacer scroll (JS: `window.scrollY > 80`)
 - Z-index: 1000
+- Botón flotante "volver arriba" (⬆︎ redondeado, esquina inferior derecha, visible al scrollear)
 
 ### 2. HERO
 - Altura: `100vh` mínimo
@@ -89,14 +93,14 @@ land-sale/
 - Contenido centrado:
   - Eyebrow: "Oportunidad de Inversión" (Nunito 600, uppercase, amarillo)
   - H1: "Venta de Terrenos" (Playfair Display 900, blanco)
-  - Subtitle: "cerca del Badén" (Dancing Script 700, verde claro)
+  - Subtitle: "cerca del Badén" (Dancing Script 700, amarillo suave)
   - Descripción breve
   - 2 botones: "Ver Oferta" (CTA amarillo) + "WhatsApp" (blanco outline)
 - Scroll indicator animado (chevron rebotando)
 
 ### 3. BANDA DE OFERTA
-- Clip-path diagonal
-- Fondo: verde oscuro con borde amarillo 3px
+- Clip-path diagonal sobre pseudo-elemento `::before`
+- Fondo: verde oscuro
 - LEFT: precio original tachado animado + precio final grande
 - RIGHT: countdown timer (días, horas, minutos, segundos)
 - Badge "30% OFF" rotado -5deg, fondo amarillo
@@ -122,7 +126,7 @@ que se adaptan         de conexión            para tu compra
   - 📍 Zona: Cerca Puente del Baden, Tucumán
 
 ### 6. MAPA INTERACTIVO (Leaflet.js)
-- Centro mapa: lat -26.6282, lng -65.1955 (zona Badén, Tucumán)
+- Centro mapa: lat -27.630421, lng -65.693640 (zona Badén, Tucumán)
 - Zoom inicial: 14
 - Tile layer: OpenStreetMap
 - Marcador custom: ícono pin verde con círculo pulsante
@@ -131,24 +135,31 @@ que se adaptan         de conexión            para tu compra
 - Responsive: 100% ancho
 
 ### 7. GALERÍA
+- **Estado**: [COMENTADA] — Placeholder para implementación futura
 - Grid 2×3 con fotos de naturaleza tucumana
 - Hover: zoom + overlay con texto
 - Lightbox simple (CSS-only o JS básico)
 - Imágenes: Unsplash URLs (naturaleza / bosque / montaña)
 
-### 8. CTA FINAL
-- Fondo: textura de grano + color verde muy oscuro
-- H2: "¿Listo para invertir en tu futuro?"
-- Subtext: "Quedan solo 3 terrenos disponibles"
-- Botón WhatsApp grande con animación pulse
-- Número de teléfono clickable
-- Badge urgencia parpadeante: "¡ÚLTIMAS UNIDADES!"
+### 8. TESTIMONIOS
+- **Estado**: [COMENTADA] — Placeholder para implementación futura
+- 2-3 testimonios ficticios con foto, nombre y texto
+- Estilo: tarjetas con borde izquierdo verde
 
-### 9. FOOTER
+### 9. CTA FINAL
+- Fondo: textura de grano + color verde muy oscuro
+- Badge: "¡Últimas 3 unidades disponibles!"
+- H2: "¿Listo para invertir en tu futuro?"
+- Subtext: "Naturaleza, tranquilidad y crecimiento. Financiación flexible. Escribinos hoy y asegurá tu lote antes de que se agoten."
+- Botón WhatsApp grande con animación pulse
+- Número de teléfono clickable: 3865-430532
+- Garantía: "Operación segura · Documentación en regla · Sin costos ocultos"
+
+### 10. FOOTER
 - Logo + tagline
 - Links de navegación
 - Datos de contacto (tel, web, WhatsApp)
-- Copyright
+- Copyright: "© 2026 Terrenos cerca del Badén — Todos los derechos reservados" (centrado)
 
 ---
 
@@ -161,7 +172,7 @@ que se adaptan         de conexión            para tu compra
 window.addEventListener('scroll', () => { ... })
 
 // 2. Countdown timer
-// Target: fecha fija (30 días desde hoy o fecha hardcodeada)
+// Target: fecha fija 2026-08-15
 function initCountdown(targetDate) { ... }
 setInterval(updateCountdown, 1000)
 
@@ -170,7 +181,7 @@ AOS.init({ duration: 800, once: true, offset: 100 })
 
 // 4. Leaflet Map
 function initMap() {
-  const map = L.map('mapa-container').setView([-26.6282, -65.1955], 14)
+  const map = L.map('mapa-container').setView([-27.630421, -65.693640], 14)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map)
   // Marcador custom
   // Círculo de área
@@ -265,7 +276,7 @@ document.querySelectorAll('.whatsapp-btn').forEach(btn => {
 
 | Campo           | Valor                                    |
 |-----------------|------------------------------------------|
-| Coordenadas     | lat: -26.6282 / lng: -65.1955            |
+| Coordenadas     | lat: -27.630421 / lng: -65.693640         |
 | Zoom            | 14                                       |
 | Tile provider   | OpenStreetMap (gratuito, sin API key)    |
 | Marcador        | SVG custom verde + popup HTML            |
