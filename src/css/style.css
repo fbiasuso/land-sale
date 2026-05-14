@@ -1389,6 +1389,10 @@ footer {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
+@media (min-width: 769px) {
+  .hero-scroll { display: none; }
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
@@ -1408,8 +1412,8 @@ footer {
     position: relative;
     top: auto; left: auto;
     transform: rotate(-4deg);
-    margin-bottom: 16px;
-    display: inline-block;
+    margin: 0 auto 16px;
+    width: fit-content;
   }
 
   .lote-boxes { flex-direction: row; }
