@@ -174,17 +174,40 @@ ul { list-style: none; }
 .nav-hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: var(--verde-oscuro);
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
-  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  transition: background var(--transicion), box-shadow var(--transicion), transform var(--transicion);
+}
+
+.nav-hamburger:hover,
+.nav-hamburger:focus-visible {
+  background: color-mix(in srgb, var(--verde-oscuro) 85%, white);
+  /* fallback: #1a3a1c */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+}
+
+.nav-hamburger:focus-visible {
+  outline: 2px solid var(--amarillo);
+  outline-offset: 2px;
 }
 
 .nav-hamburger span {
   display: block;
-  width: 26px; height: 2px;
+  width: 20px;
+  height: 2px;
   background: var(--blanco);
   border-radius: 2px;
   transition: var(--transicion);
+  flex-shrink: 0;
 }
 
 /* =====================================================
@@ -1439,11 +1462,65 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 32px;
-  z-index: 999;
+  z-index: 1001;
+  animation: navMenuIn 0.3s ease both;
+}
+
+@keyframes navMenuIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Close button inside mobile overlay */
+.nav-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: var(--blanco);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color var(--transicion), background var(--transicion);
+  z-index: 1;
+}
+
+.nav-close-btn:hover {
+  border-color: var(--amarillo);
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-close-btn:focus-visible {
+  outline: 2px solid var(--amarillo);
+  outline-offset: 2px;
+}
+
+/* Desktop: hide close button (after main styles so specificity wins) */
+@media (min-width: 769px) {
+  .nav-close-btn { display: none; }
 }
 
 .nav-links.open a {
   font-size: 1.3rem;
+  animation: navLinkIn 0.3s ease both;
+}
+
+.nav-links.open a:nth-child(2) { animation-delay: 0.05s; }
+.nav-links.open a:nth-child(3) { animation-delay: 0.10s; }
+.nav-links.open a:nth-child(4) { animation-delay: 0.15s; }
+.nav-links.open a:nth-child(5) { animation-delay: 0.20s; }
+.nav-links.open a:nth-child(6) { animation-delay: 0.25s; }
+
+@keyframes navLinkIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .nav-hamburger.open span:nth-child(1) {
