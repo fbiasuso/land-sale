@@ -52,17 +52,18 @@ function initCountdown() {
   // Target: 30 días desde el primer acceso (o fecha fija)
   const STORAGE_KEY = 'terrenos_countdown_end';
   //let endTime = localStorage.getItem(STORAGE_KEY);
-  let endTime = new Date('2026-08-15'); 
-
-  if (!endTime) {
-    /* const future = new Date();
+  let endTime = new Date('2026-8-15').getTime(); 
+  
+console.log(endTime);
+ /*  if (!endTime) {
+     const future = new Date();
     future.setDate(future.getDate() + 30);
-    endTime = future.getTime(); */
-    
+    endTime = future.getTime(); 
+    console.log("nodefinida");
     try { localStorage.setItem(STORAGE_KEY, endTime); } catch(e) {}
-  }
+  } */
 
-  endTime = parseInt(endTime);
+  //endTime = parseInt(endTime);
 
   const elDays  = document.getElementById('cd-dias');
   const elHours = document.getElementById('cd-horas');
