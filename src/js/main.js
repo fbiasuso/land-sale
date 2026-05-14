@@ -51,12 +51,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 function initCountdown() {
   // Target: 30 días desde el primer acceso (o fecha fija)
   const STORAGE_KEY = 'terrenos_countdown_end';
-  let endTime = localStorage.getItem(STORAGE_KEY);
+  //let endTime = localStorage.getItem(STORAGE_KEY);
+  let endTime = new Date('2026-08-15'); 
 
   if (!endTime) {
-    const future = new Date();
+    /* const future = new Date();
     future.setDate(future.getDate() + 30);
-    endTime = future.getTime();
+    endTime = future.getTime(); */
+    
     try { localStorage.setItem(STORAGE_KEY, endTime); } catch(e) {}
   }
 
@@ -142,8 +144,8 @@ function initMap() {
   mapInitialized = true;
 
   // Coordenadas: zona Baden, Tucumán, Argentina
-  const LAT = -26.6282;
-  const LNG = -65.1955;
+  const LAT = -27.630421;
+  const LNG = -65.693640;
 
   const map = L.map('mapa-container', {
     center: [LAT, LNG],
@@ -188,7 +190,7 @@ function initMap() {
     <div class="map-popup">
       <h4>🌿 3 Terrenos disponibles</h4>
       <p>📐 10 × 30 mts (300 m² c/u)</p>
-      <p>🛣️ Acceso por Camino Vecinal</p>
+      <p>🛣️ Acceso desde Ruta 308 por Camino Vecinal</p>
       <p>💡 Factibilidad agua y luz</p>
       <p class="map-precio">$ 7.000.000</p>
       <p style="font-size:0.78rem;color:#888;margin-top:4px;">Cerca del Puente del Badén · Ruta 308</p>
@@ -209,17 +211,32 @@ function initMap() {
     fillOpacity: 0.12,
     weight: 2,
     dashArray: '8,6',
-    radius: 120,
+    radius: 60,
   }).addTo(map);
 
   // Ruta 308 label approximate point
-  L.marker([-26.6240, -65.1890], {
+  L.marker([-27.625739, -65.684788], {
     icon: L.divIcon({
       className: '',
       html: `<div style="background:#f5c518;color:#0f2410;font-size:11px;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.3)">RUTA 308</div>`,
       iconAnchor: [30, 10],
+    }), 
+  }).addTo(map);
+  L.marker([-27.624808, -65.697727], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="background:#A2CADF;color:#0f2410;font-size:11px;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.3)">CAMINO VECINAL</div>`,
+      iconAnchor: [30, 10],
     })
   }).addTo(map);
+ 
+  L.marker([-27.623620, -65.694800], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="background:#3fd33e;color:#0f2410;font-size:11px;font-weight:800;padding:3px 8px;border-radius:4px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.3)">PUENTE DEL BADEN</div>`,
+      iconAnchor: [30, 10],
+    })
+  }).addTo(map);    
 }
 
 // Load map when section is visible
