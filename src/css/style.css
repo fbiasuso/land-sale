@@ -119,7 +119,19 @@ ul { list-style: none; }
   gap: 8px;
 }
 
-.nav-logo span {
+.nav-logo-text .nav-l2 em {
+  font-style: normal;
+  color: var(--amarillo);
+}
+
+.nav-logo-text {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.nav-logo-text .nav-l2 em {
+  font-style: normal;
   color: var(--amarillo);
 }
 
@@ -1454,6 +1466,18 @@ footer {
   .lote-box { width: 80px; height: 160px; }
 
   #mapa-container { height: 320px; }
+}
+
+@media (max-width: 880px) and (min-width: 769px) {
+  .nav-logo {
+    font-size: 1rem;
+    align-items: center;
+  }
+  .nav-logo-text {
+    flex-direction: column;
+    gap: 2px;
+    line-height: 1.15;
+  }
 }
 
 @media (max-width: 480px) {
