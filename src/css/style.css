@@ -1461,6 +1461,7 @@ footer {
   .cta-btns { flex-direction: column; align-items: center; }
   .countdown-grid { flex-wrap: wrap; justify-content: center; }
   .terrenos-stats { grid-template-columns: 1fr 1fr; }
+  .nav-logo { font-size: 0.95rem; white-space: nowrap; }
 }
 
 /* Mobile nav open */

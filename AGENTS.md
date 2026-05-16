@@ -15,3 +15,6 @@ Página de venta de terrenos.
 
 - en /src esta todo el codigo.
 - en /dcos estan los estandares y especificaciones de desarrollo.
+
+# GOLD RULES
+- No pushear a producción, solo trabajar en local por ahora a menos que explicitamente el usuario lo pida lo contrario.
