@@ -138,10 +138,10 @@ if (navLinks) {
 })();
 
 // ── 3. SMOOTH SCROLL ───────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not([data-modal])').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
-    if (href === '#' || this.hasAttribute('data-modal')) return;
+    if (href === '#') return;
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();

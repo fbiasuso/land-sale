@@ -666,6 +666,10 @@
 
       <div class="footer-bottom">
         <p>© 2026 Terrenos cerca del Badén. Todos los derechos reservados.</p>
+        <div class="footer-legal">
+          <a href="#" data-modal="terminos">Términos y condiciones</a>
+          <a href="#" data-modal="privacidad">Políticas de privacidad</a>
+        </div>
       </div>
 
     </div>
@@ -682,6 +686,16 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./js/main.js"></script>
+
+  <!-- ═══════════════════════════════════════════════
+       MODAL OVERLAY (legal links)
+  ═══════════════════════════════════════════════ -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar">✕</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
 
 </body>
 </html>
