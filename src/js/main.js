@@ -96,8 +96,8 @@ if (navLinks) {
   const closeBtn = overlay?.querySelector('.modal-close');
 
   const content = {
-    terminos: '<h2>Términos y condiciones</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
-    privacidad: '<h2>Políticas de privacidad</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>'
+    terminos: '<h2>Términos y condiciones</h2><p>La información publicada en este sitio web tiene carácter informativo y puede ser modificada o actualizada sin previo aviso.</p><p> La disponibilidad de terrenos, precios, dimensiones, características, financiación y condiciones de venta están sujetos a verificación y confirmación directa con el propietario o responsable comercial.</p><p>Las imágenes, descripciones y materiales publicados son ilustrativos y pueden variar.</p><p>El uso de este sitio implica la aceptación de estos términos y condiciones. El propietario o responsable comercial no se responsabiliza por decisiones tomadas exclusivamente en base a la información aquí presentada sin verificación previa.</p>',
+    privacidad: '<h2>Políticas de privacidad</h2><p>En este sitio web, los datos personales proporcionados por los usuarios a través de formularios de contacto, WhatsApp u otros medios de comunicación serán utilizados únicamente para responder consultas, brindar información comercial y facilitar el contacto relacionado con la venta de terrenos.</p><p>No compartimos, vendemos ni cedemos información personal a terceros sin consentimiento previo, salvo obligación legal.</p><p>Al utilizar este sitio, el usuario acepta el uso de sus datos con fines exclusivamente informativos y comerciales vinculados a los servicios ofrecidos.</p><p>Este sitio puede utilizar cookies o herramientas de análisis para mejorar la experiencia del usuario y optimizar nuestros servicios.</p><p>Si desea solicitar la modificación o eliminación de sus datos, puede comunicarse a través de los canales de contacto publicados en esta página.</p>'
   };
 
   function openModal(key) {
@@ -162,7 +162,7 @@ function initCountdown() {
   //let endTime = localStorage.getItem(STORAGE_KEY);
   let endTime = new Date('2026-08-15T00:00:00').getTime();
   
-console.log(endTime);
+
  /*  if (!endTime) {
      const future = new Date();
     future.setDate(future.getDate() + 30);
