@@ -1263,7 +1263,7 @@ footer {
 .footer-tagline {
   font-family: var(--fuente-script);
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.4);
+  color: var(--blanco);
   margin-bottom: 16px;
   margin-left: 45px;
 }
