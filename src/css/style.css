@@ -1243,11 +1243,17 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   gap: 40px;
   padding-bottom: 36px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   margin-bottom: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footer-logo {
@@ -1517,6 +1523,7 @@ footer {
   .terrenos-layout { grid-template-columns: 1fr; }
   .mapa-wrapper { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
 }
 
 @media (min-width: 769px) {
