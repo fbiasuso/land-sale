@@ -96,14 +96,16 @@ if (navLinks) {
   const closeBtn = overlay?.querySelector('.modal-close');
 
   const content = {
-    terminos: '<h2>Términos y condiciones</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>',
-    privacidad: '<h2>Políticas de privacidad</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p><p>Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p><p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.</p>'
+    terminos: '<h2>Términos y condiciones</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
+    privacidad: '<h2>Políticas de privacidad</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>'
   };
 
   function openModal(key) {
-    if (!overlay || !body || !content[key]) return;
+    console.log('openModal llamado con:', key);
+    if (!overlay || !body || !content[key]) { console.log('algo es null:', {overlay:!!overlay, body:!!body, content:!!content[key]}); return; }
     body.innerHTML = content[key];
     overlay.classList.add('open');
+    console.log('clase open agregada');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
@@ -118,6 +120,7 @@ if (navLinks) {
   // Wire links
   document.querySelectorAll('[data-modal]').forEach(function(link) {
     link.addEventListener('click', function(e) {
+      console.log('link clickeado:', this.dataset.modal);
       e.preventDefault();
       openModal(this.dataset.modal);
     });
