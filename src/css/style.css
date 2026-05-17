@@ -669,7 +669,7 @@ ul { list-style: none; }
 }
 
 .beneficio-icono {
-  width: 56px; height: 56px;
+  width: 80px; height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -677,7 +677,7 @@ ul { list-style: none; }
 }
 
 .beneficio-icono svg {
-  width: 40px; height: 40px;
+  width: 64px; height: 64px;
 }
 
 .beneficio-titulo {
@@ -690,7 +690,6 @@ ul { list-style: none; }
 
 .beneficio-desc {
   color: var(--verde-oscuro);
-  opacity: 0.8;
   font-size: 0.92rem;
   line-height: 1.6;
 }
