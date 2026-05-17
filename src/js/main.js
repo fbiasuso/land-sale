@@ -89,10 +89,60 @@ if (navLinks) {
   });
 }
 
+// ── 9. FOOTER LEGAL MODAL ────────────────────────────
+(function() {
+  const overlay = document.getElementById('modal-overlay');
+  const body = overlay?.querySelector('.modal-body');
+  const closeBtn = overlay?.querySelector('.modal-close');
+
+  const content = {
+    terminos: '<h2>Términos y condiciones</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>',
+    privacidad: '<h2>Políticas de privacidad</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p><p>Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p><p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.</p>'
+  };
+
+  function openModal(key) {
+    if (!overlay || !body || !content[key]) return;
+    body.innerHTML = content[key];
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Wire links
+  document.querySelectorAll('[data-modal]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openModal(this.dataset.modal);
+    });
+  });
+
+  // Close button
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // Overlay background click
+  if (overlay) overlay.addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay?.classList.contains('open')) closeModal();
+  });
+})();
+
 // ── 3. SMOOTH SCROLL ───────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href === '#' || this.hasAttribute('data-modal')) return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       const offset = 70;
