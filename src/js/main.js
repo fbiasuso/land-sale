@@ -101,11 +101,9 @@ if (navLinks) {
   };
 
   function openModal(key) {
-    console.log('openModal llamado con:', key);
-    if (!overlay || !body || !content[key]) { console.log('algo es null:', {overlay:!!overlay, body:!!body, content:!!content[key]}); return; }
+    if (!overlay || !body || !content[key]) return;
     body.innerHTML = content[key];
     overlay.classList.add('open');
-    console.log('clase open agregada');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
@@ -120,7 +118,6 @@ if (navLinks) {
   // Wire links
   document.querySelectorAll('[data-modal]').forEach(function(link) {
     link.addEventListener('click', function(e) {
-      console.log('link clickeado:', this.dataset.modal);
       e.preventDefault();
       openModal(this.dataset.modal);
     });
