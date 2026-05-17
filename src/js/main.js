@@ -111,6 +111,9 @@ if (navLinks) {
   function closeModal() {
     if (!overlay) return;
     overlay.classList.remove('open');
+    if (document.activeElement && overlay.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
