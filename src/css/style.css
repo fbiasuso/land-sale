@@ -296,10 +296,25 @@ ul { list-style: none; }
   color: rgba(255,255,255,0.8);
   font-size: 1.05rem;
   max-width: 520px;
-  margin: 0 auto 36px;
+  margin: 0 auto;
   animation: fadeSlideUp 0.8s 0.4s ease both;
 }
 
+.hero-desc-middle{
+color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto;
+  animation: fadeSlideUp 0.8s 0.4s ease both;
+}
+
+.hero-desc-bottom{
+color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  animation: fadeSlideUp 0.8s 0.4s ease both;
+}
 .hero-btns {
   display: flex;
   gap: 16px;
@@ -366,14 +381,14 @@ ul { list-style: none; }
   display: inline-block;
   font-family: var(--fuente-body);
   font-weight: 800;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--amarillo);
   padding: 6px 18px;
   border: 1px solid rgba(245,197,24,0.4);
   border-radius: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   animation: fadeSlideUp 0.8s ease both;
 }
 
@@ -1250,6 +1265,7 @@ footer {
   font-size: 0.95rem;
   color: rgba(255,255,255,0.4);
   margin-bottom: 16px;
+  margin-left: 45px;
 }
 
 .footer-contact a {

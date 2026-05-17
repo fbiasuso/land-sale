@@ -246,7 +246,7 @@ function initMap() {
     <div class="map-popup">
       <h4>🌿 3 Terrenos disponibles</h4>
       <p>📐 10 × 30 mts (300 m² c/u)</p>
-      <p>🛣️ Acceso desde Ruta 308 por Camino Vecinal</p>
+      <p>🛣️ Acceso por Camino Vecinal</p>
       <p>💡 Factibilidad agua y luz</p>
       <p class="map-precio">$ 7.000.000</p>
       <p style="font-size:0.78rem;color:#888;margin-top:4px;">Cerca del Puente del Badén · Ruta 308</p>
